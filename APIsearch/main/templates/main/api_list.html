@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API List</title>
+</head>
+<body>
+    <h1>API List</h1>
+    <form method="GET">
+        <select name="category">
+            <option value="">Все категории</option>
+            <option value="category1">Категория 1</option>
+            <option value="category2">Категория 2</option>
+        </select>
+        <button type="submit">Фильтровать</button>
+    </form>
+
+    <ul>
+        {% for api in apis %}
+            <li>{{ api.name }} - {{ api.price }} USD</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
