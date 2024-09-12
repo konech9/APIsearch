@@ -9,7 +9,7 @@ body {
   height: 1080px;
   background: rgba(241,241,241,1);
   opacity: 1;
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
   overflow: hidden;
@@ -33,7 +33,7 @@ body {
   color: rgba(255,251,251,1);
   position: absolute;
   top: 22px;
-  left: 185px;
+  left: 156px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 40px;
@@ -45,7 +45,7 @@ body {
   color: rgba(255,251,251,1);
   position: absolute;
   top: 70px;
-  left: 72px;
+  left: 43px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 32px;
@@ -72,7 +72,7 @@ body {
   color: rgba(214,214,214,1);
   position: absolute;
   top: 34px;
-  left: 136px;
+  left: 148px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 28px;
@@ -299,11 +299,16 @@ body {
   position: absolute;
   top: 283px;
   left: 1753px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
+}
+.v111_450 {
+  width: 190px;
+  height: 66px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 68px;
+  left: 823px;
+  border: 0px solid rgba(0,0,0,1);
 }
 .v93_44 {
   width: 106px;
@@ -311,6 +316,18 @@ body {
   position: absolute;
   top: 298px;
   left: 1777px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 28px;
+  opacity: 1;
+  text-align: left;
+}
+.v112_4 {
+  width: 85px;
+  color: rgba(79,79,79,1);
+  position: absolute;
+  top: 83px;
+  left: 875px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 28px;
@@ -365,50 +382,6 @@ body {
   top: 32px;
   left: 1078px;
   overflow: hidden;
-}
-.v100_43 {
-  width: 683px;
-  height: 257px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 692px;
-  left: 454px;
-  overflow: hidden;
-}
-.v100_46 {
-  width: 132px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 22px;
-  left: 276px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 28px;
-  opacity: 1;
-  text-align: left;
-}
-.v100_44 {
-  width: 683px;
-  height: 257px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 692px;
-  left: 1185px;
-  overflow: hidden;
-}
-.v100_48 {
-  width: 150px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 21px;
-  left: 267px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 28px;
-  opacity: 1;
-  text-align: left;
 }
 .v100_57 {
   width: 82px;

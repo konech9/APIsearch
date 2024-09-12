@@ -32,36 +32,44 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 
+# def login_view(request):
+#     print("login")
+#     if request.method == 'POST':
+#         print(request)
+#         form = UserLoginForm(request, data=request.POST)
+#         # print(f"'{form.username}'")
+#         # print(f"'{form.password}'")
+#         if form.is_valid():
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password')
+#             user = authenticate(username=username, password=password)
+#             if user is not None:
+#                 login(request, user)
+#                 return redirect('profile')
+#             else:
+#                 print('User is none')
+#         else:
+#             print('Form not valid')
+#     else:
+#         form = UserLoginForm()
+#         print('Not post')
+#     return render(request, 'login.html', {'form': form})
+
+
 def login_view(request):
     if request.method == 'POST':
-        form = UserLoginForm(request, data=request.POST)
+        form = AuthenticationForm(data=request.POST)
+        #print(f"'{form.username}'")
+        #print(f"'{form.password}'")
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('profile')
-            else:
-                print('User is none')
+            user = form.get_user()
+            login(request, user)
+            return redirect('profile')  # Перенаправление на профиль после входа
         else:
             print('Form not valid')
     else:
-        form = UserLoginForm()
-        print('Not post')
+        form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
-
-
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = AuthenticationForm(data=request.POST)
-#         if form.is_valid():
-#             user = form.get_user()
-#             login(request, user)
-#             return redirect('profile')  # Перенаправление на профиль после входа
-#     else:
-#         form = AuthenticationForm()
-#     return render(request, 'login.html', {'form': form})
 
 
 @login_required

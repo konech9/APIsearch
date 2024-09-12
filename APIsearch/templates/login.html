@@ -1,24 +1,147 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>My Site</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <nav>-->
+<!--        <a href="{% url 'login' %}">Войти</a> |-->
+<!--        <a href="{% url 'register' %}">Зарегистрироваться</a>-->
+<!--    </nav>-->
+<!--    <hr>-->
+<!--    <div>-->
+<!--          <h2>Вход</h2>-->
+<!--          <form method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            {{ form.as_p }}-->
+<!--            <button type="submit">Войти</button>-->
+<!--          </form>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="{% static 'login/css/main.css' %}" rel="stylesheet" />
+    <title>Авторизация</title>
 </head>
 <body>
-    <nav>
-        <a href="{% url 'login' %}">Войти</a> |
-        <a href="{% url 'register' %}">Зарегистрироваться</a>
-    </nav>
-    <hr>
-    <div>
-          <h2>Вход</h2>
-          <form method="POST">
+<div class="v105_215">
+    <div class="v105_216">
+        <span class="v105_217">SIBIRSKIY COSMOS</span>
+        <span class="v105_218">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
+    </div>
+    <div class="v105_219">
+        <span class="v105_220">АВТОРИЗАЦИЯ</span>
+    </div>
+    <div class="v105_221">
+        <div class="v105_222"></div>
+        <div class="v105_223"></div>
+        <div class="v105_224"></div>
+    </div>
+    <div class="v105_244"></div>
+    <span class="v105_245">Логин</span>
+    <div class="v105_247"></div>
+    <span class="v105_248">Пароль</span>
+    <div class="v105_254">
+        <span class="v105_255">Войти</span>
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    {% load static %}-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />-->
+<!--    <link href="{% static 'login/css/main.css' %}" rel="stylesheet" />-->
+<!--    <title>Авторизация</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="v105_215">-->
+<!--        <div class="v105_216">-->
+<!--            <span class="v105_217">SIBIRSKIY COSMOS</span>-->
+<!--            <span class="v105_218">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>-->
+<!--        </div>-->
+<!--        <div class="v105_219">-->
+<!--            <span class="v105_220">АВТОРИЗАЦИЯ</span>-->
+<!--        </div>-->
+<!--        <div class="v105_221">-->
+<!--            <div class="v105_222"></div>-->
+<!--            <div class="v105_223"></div>-->
+<!--            <div class="v105_224"></div>-->
+<!--        </div>-->
+<!--        <div class="v105_244"></div>-->
+
+<!--        &lt;!&ndash; Форма для авторизации &ndash;&gt;-->
+<!--        <form action="{% url 'login' %}" method="post" class="auth-form">-->
+<!--            {% csrf_token %}-->
+<!--            <div class="v105_245">-->
+<!--                <label for="username">Логин</label>-->
+<!--                <input type="text" id="username" name="username" required />-->
+<!--            </div>-->
+<!--            <div class="v105_247"></div>-->
+<!--            <div class="v105_248">-->
+<!--                <label for="password">Пароль</label>-->
+<!--                <input type="password" id="password" name="password" required />-->
+<!--            </div>-->
+<!--            <div class="v105_254">-->
+<!--                <button type="submit" class="v105_255">Войти</button>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="{% static 'login/css/main.css' %}" rel="stylesheet" />
+    <title>Авторизация</title>
+</head>
+<body>
+    <div class="v105_215">
+        <div class="v105_216">
+            <span class="v105_217">SIBIRSKIY COSMOS</span>
+            <span class="v105_218">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
+        </div>
+        <div class="v105_219">
+            <span class="v105_220">АВТОРИЗАЦИЯ</span>
+        </div>
+        <div class="v105_221">
+            <div class="v105_222"></div>
+            <div class="v105_223"></div>
+            <div class="v105_224"></div>
+        </div>
+        <div class="v105_244"></div>
+
+        <!-- Форма для авторизации -->
+        <form action="{% url 'login' %}" method="post" class="auth-form">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Войти</button>
-          </form>
+            <div class="v105_245">
+                <label for="username">Логин</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="v105_247"></div>
+            <div class="v105_248">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="v105_254">
+                <button type="submit" class="v105_255">Войти</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

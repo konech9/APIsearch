@@ -1,24 +1,113 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>My Site</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <nav>-->
+<!--        <a href="{% url 'login' %}">Войти</a> |-->
+<!--        <a href="{% url 'register' %}">Зарегистрироваться</a>-->
+<!--    </nav>-->
+<!--    <hr>-->
+<!--    <div>-->
+<!--          <h2>Регистрация</h2>-->
+<!--          <form method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            {{ form.as_p }}-->
+<!--            <button type="submit">Зарегистрироваться</button>-->
+<!--          </form>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="{% static 'login/css/main.css' %}" rel="stylesheet" />
+    <title>Регистрация</title>
 </head>
 <body>
-    <nav>
-        <a href="{% url 'login' %}">Войти</a> |
-        <a href="{% url 'register' %}">Зарегистрироваться</a>
-    </nav>
-    <hr>
-    <div>
-          <h2>Регистрация</h2>
-          <form method="POST">
+    <div class="v103_163">
+        <div class="v103_164">
+            <span class="v103_165">SIBIRSKIY COSMOS</span>
+            <span class="v103_166">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
+        </div>
+        <div class="v103_167">
+            <span class="v103_168">РЕГИСТРАЦИЯ</span>
+        </div>
+        <div class="v103_169">
+            <div class="v103_170"></div>
+            <div class="v103_171"></div>
+            <div class="v103_172"></div>
+        </div>
+        <div class="v103_175"></div>
+        <div class="v105_189"></div>
+        <div class="v105_191"></div>
+        <div class="v105_193"></div>
+        <div class="v105_197"></div>
+        <div class="v105_201"></div>
+        <div class="v105_207"></div>
+        <div class="v105_209"></div>
+        <div class="v105_213"></div>
+
+        <!-- Форма регистрации -->
+        <form action="{% url 'register' %}" method="post" class="registration-form">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Зарегистрироваться</button>
-          </form>
+            <div class="v105_250">
+                <button type="submit" class="v105_252">Зарегистрироваться</button>
+            </div>
+
+            <div class="form-group">
+                <label for="username" class="v103_176">Username</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="v103_184">Password</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirmation" class="v103_180">Password confirmation</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" required />
+            </div>
+
+            <div class="form-group">
+                <label for="first_name" class="v103_181">First name</label>
+                <input type="text" id="first_name" name="first_name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="last_name" class="v105_195">Last name</label>
+                <input type="text" id="last_name" name="last_name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="patronymic" class="v105_199">Patronymic</label>
+                <input type="text" id="patronymic" name="patronymic" required />
+            </div>
+
+            <div class="form-group">
+                <label for="birth_date" class="v105_205">Birth date</label>
+                <input type="date" id="birth_date" name="birth_date" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="v105_211">Phone</label>
+                <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+                <label for="age" class="v105_203">Age</label>
+                <input type="number" id="age" name="age" required />
+            </div>
+        </form>
     </div>
 </body>
 </html>
