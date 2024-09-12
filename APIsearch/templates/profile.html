@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'login' %}">Войти</a> |
+        <a href="{% url 'register' %}">Зарегистрироваться</a>
+    </nav>
+    <hr>
+    <form method="post" action="{% url 'profile' %}">
+    {% csrf_token %}
+    <!-- Поля формы -->
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" />
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" />
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" value="{{ user.phone }}" />
+
+    <!-- Другие поля формы -->
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

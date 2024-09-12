@@ -8,6 +8,8 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile, name='profile'),
+    # path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+    # path('static/<path:path>', serve, {'document_root': settings.STATIC_ROOT}),
 ]
 
 

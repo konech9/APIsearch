@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    {% load static %}
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-    <link href="./css/main.css" rel="stylesheet" />
-    <title>Document</title>
+    <link href="{% static 'main/css/main.css' %}" rel="stylesheet" />
+    <title>API list</title>
 </head>
 
 <body>
@@ -68,5 +68,11 @@
     <div class="v100_57"></div>
 </div>
 
+    <h1>API List</h1>
+    <ul>
+        {% for api in apis %}
+            <li>{{ api.name }} - {{ api.price }} USD</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
