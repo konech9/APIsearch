@@ -3,11 +3,11 @@ from .models import API
 
 def api_list(request):
     # Фильтры
-    category = request.GET.get('category')
+    #category = request.GET.get('category')
     apis = API.objects.all()
 
-    if category:
-        apis = apis.filter(category=category)
+    # if category:
+    #     apis = apis.filter(category=category)
 
     context = {
         'apis': apis,

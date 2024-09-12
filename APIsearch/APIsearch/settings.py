@@ -66,9 +66,9 @@ WSGI_APPLICATION = 'APIsearch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
         'PORT': '5432',
     }
