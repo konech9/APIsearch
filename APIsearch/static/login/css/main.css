@@ -334,6 +334,7 @@ body {
   overflow: hidden;
 }
 
+/*Прямоугольники */
 .v105_189 { top: 367px; left: 229px; }
 .v105_191 { top: 450px; left: 229px; }
 .v105_193 { top: 533px; left: 229px; }
@@ -360,12 +361,13 @@ body {
   position: absolute;
 }
 
-.v103_176 { top: 248px; left: 254px; }
+/*Надписи */
+.v103_176 { top: 0px; left: 254px; }
 .v103_180 { top: 417px; left: 254px; }
 .v103_181 { top: 500px; left: 257px; }
 .v105_195 { top: 579px; left: 254px; }
 .v105_199 { top: 275px; left: 1127px; }
-.v105_205 { top: 361px; left: 1131px; }
+.v105_205 { top: 0px; left: 1131px; }
 .v105_211 { top: 444px; left: 1131px; }
 .v105_203 { top: 531px; left: 1131px; }
 .v103_184 { top: 334px; left: 257px; }
@@ -410,3 +412,4 @@ body {
 .registration-form button:hover {
   background: rgba(115, 150, 180, 1);
 }
+/*Конец регистрации*/

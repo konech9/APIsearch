@@ -123,16 +123,16 @@ body {
   overflow: hidden;
 }
 
-/*.v105_189, .v105_191, .v105_193, .v105_197, .v105_201, .v105_207, .v105_209, .v105_213, .v105_250 {
+.v105_189, .v105_191, .v105_193, .v105_197, .v105_201, .v105_207, .v105_209, .v105_213, .v105_250 {
   width: 700px;
   height: 50px;
   background: rgba(219, 232, 243, 1);
   position: absolute;
   border-radius: 10px;
   overflow: hidden;
-}*/
+}
 
-.v105_189 { top: 1367px; left: 229px; }
+.v105_189 { top: 367px; left: 229px; }
 .v105_191 { top: 450px; left: 229px; }
 .v105_193 { top: 533px; left: 229px; }
 .v105_197 { top: 612px; left: 229px; }
@@ -147,7 +147,7 @@ body {
   font-weight: bold;
   font-size: 28px;
   text-align: center;
-  line-height: 50px; /* Center text vertically */
+  line-height: 50px; /* Center text vertically
 }
 
 .v103_176, .v103_180, .v103_181, .v105_195, .v105_199, .v105_205, .v105_211, .v105_203, .v103_184 {
@@ -166,7 +166,7 @@ body {
 .v105_205 { top: 361px; left: 1131px; }
 .v105_211 { top: 444px; left: 1131px; }
 .v105_203 { top: 531px; left: 1131px; }
-.v103_184 { top: 334px; left: 257px; }
+.v103_184 { top: 334px; left: 257px; }*/
 
 /* Styles for form */
 .registration-form {
