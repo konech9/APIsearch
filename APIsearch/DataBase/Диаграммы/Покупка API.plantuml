@@ -1,0 +1,86 @@
+@startuml Запись на приём к врачу Пользователь-Федерация-ЕРСЗ
+
+skinparam MaxMessageSize 150
+skinparam ParticipantPadding 60
+skinparam ActorPadding 60
+skinparam DatabasePadding 60
+
+
+Title Прототип дигараммы процесса "Покупка API"
+
+actor "Пользователь" as user
+box Siberian Space API
+participant "Веб-приложение" as web
+participant "Сервер" as server
+Database "База данных" as database
+end box
+participant "Банк" as bank
+
+
+activate user
+
+note over user #LightCyan: Пользователь\nавторизован
+
+==Проверка наличия доступных API==
+user->web++:Запрос на поиск доступных API
+    web->server++:Запрос наличия доступных API
+        server->database++:Запрос наличия доступных API
+            database->database:Проверка наличия доступных API
+        server<--database--:Доступные API продукты
+    web<--server--:Доступные API продукты
+    web->web:Формирование формы с фильтрами
+user<--web:Форма выбора API
+user->user:Выбор параметров API
+
+==Выбор API==
+
+user->web:Параметры API
+    web->web:Проверка корректности данных
+    web->server++:Запрос доступных API с учётом параметров
+        server->database++:Запрос доступных API c учётом параметров
+            database->database:Формирование списка доступных API
+        server<--database--:Список доступных API с учётом параметров
+    web<--server--:Список доступных API с учётом параметров
+    web->web: Формирование ответа
+user<--web:Список доступных API с учётом параметров
+user->user:Выбор конкретного API
+
+==Выбор тарифа==
+
+user->web:Выбранный API
+    web->server++:Запрос информации о тарифах/версиях API
+        server->database++:Запрос информации о тарифах/версиях API
+            database->database:Формирование информации о тарифах/версиях API
+        server<-database--:Информация о тарифах/версиях API
+    web<-server--:Информация о тарифах/версиях API
+    web->web: Формирование ответа
+user<--web:Информация о тарифах/версиях выбранного API
+user->user:Выбор тарифа и версии API
+
+==Оплата==
+
+user->web:Выбранный тариф и версия
+    web->web:Формирование формы для внесения оплаты
+user<-web:Форма оплаты
+user->user:Внесение платёжных данных
+user->web:Данные для платежа
+    web->server++:Данные для платежа
+        server->bank++:Запрос на осуществление платежа
+        server<--bank--:Подтверждение платежа
+        server->database++:Запрос на сохранение информации об успешной оплате
+            database->database:Сохранение информации об оплате
+        server<-database--:Подтверждение сохранения информации
+    web<--server:Подтверждение оплаты
+user<--web:Подтверждение оплаты
+        server->database++:Запрос данных об API
+            database->database:Формирование данных о доступе к API
+        server<-database--:Информация для доступа к API
+    web<-server--:Информация для доступа к API
+user<-web--:Информация для доступа к API
+    
+
+
+
+
+
+@enduml
