@@ -1,0 +1,37 @@
+@startuml Запись на приём к врачу Пользователь-Федерация-ЕРСЗ
+
+skinparam MaxMessageSize 150
+skinparam ParticipantPadding 60
+
+
+Title Прототип дигараммы последовательностей процесса "Регистрация пользователя"
+
+actor "Пользователь" as user
+box Siberian Space API
+participant "Веб-приложение" as web
+participant "Сервер" as server
+Database "База данных" as database
+end box
+
+activate user
+
+
+'==Идентификация и определение прикрепления==
+user->web++:Запрос регистрации
+user<--web:Форма регистрации
+    user->user:Заполнение формы регистрации
+user->web:Данные пользователя
+    web->web:Проверка корректности данных
+    web->server++:Данные пользователя
+        server->database++:Запрос на проверку дублирования данных
+            database->database: Поиск дублирований данных
+        server<--database--:Отправка признака доступности регистрации
+        server->database++:Запрос на создание пользователя
+            database->database:Создание пользователя
+        server<--database--:Подтвержение создания пользователя
+    web<--server--:Подтверждение регистрации
+user<--web--:Подтверждение регистрации
+
+
+
+@enduml
