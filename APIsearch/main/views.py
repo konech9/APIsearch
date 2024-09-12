@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
 
+
 def api_list(request):
     # Фильтры
     #category = request.GET.get('category')
@@ -17,6 +18,7 @@ def api_list(request):
     }
     return render(request, 'main/api_list.html', context)
 
+
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -27,6 +29,7 @@ def register(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'main/register.html', {'form': form})
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -41,6 +44,7 @@ def login_view(request):
     else:
         form = CustomAuthenticationForm()
     return render(request, 'main/login.html', {'form': form})
+
 
 def logout_view(request):
     logout(request)
