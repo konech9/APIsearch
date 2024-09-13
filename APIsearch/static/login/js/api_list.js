@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const protocolValue = protocolFilter.value;
         const dateValue = dateFilter.value;
 
-        apiItems.forEach(item => {
+        // Фильтрация элементов
+        let filteredItems = apiItems.filter(item => {
             const name = item.dataset.name.toLowerCase();
             const price = parseFloat(item.dataset.price);
             const type = item.dataset.type;
@@ -42,35 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 showItem = false;
             }
 
-            item.style.display = showItem ? 'block' : 'none';
-        });
-
-        sortItems();
-    }
-
-    function sortItems() {
-        const sortBy = {
-            'price-low-high': (a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price),
-            'price-high-low': (a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price),
-            'newest': (a, b) => new Date(b.dataset.date) - new Date(a.dataset.date),
-            'oldest': (a, b) => new Date(a.dataset.date) - new Date(b.dataset.date)
-        };
-
-        const sortValue = {
-            'price-filter': priceFilter.value,
-            'date-filter': dateFilter.value
-        };
-
-        apiItems.sort((a, b) => {
-            for (const [key, value] of Object.entries(sortValue)) {
-                if (sortBy[value]) {
-                    return sortBy[value](a, b);
-                }
+            if (priceValue && (priceValue === 'low-high' && price > parseFloat(priceFilter.getAttribute('data-min-price')) || priceValue === 'high-low' && price < parseFloat(priceFilter.getAttribute('data-max-price')))) {
+                showItem = false;
             }
-            return 0;
+
+            return showItem;
         });
 
-        apiItems.forEach(item => apiList.appendChild(item));
+        // Сортировка элементов
+        if (priceFilter.value === 'price-low-high') {
+            filteredItems.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+        } else if (priceFilter.value === 'price-high-low') {
+            filteredItems.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+        } else if (dateFilter.value === 'newest') {
+            filteredItems.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+        } else if (dateFilter.value === 'oldest') {
+            filteredItems.sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date));
+        }
+
+        // Обновление отображения элементов
+        apiList.innerHTML = ''; // Очистить текущий список
+        filteredItems.forEach(item => apiList.appendChild(item));
     }
 
     searchBox.addEventListener('input', filterAndSort);
@@ -80,5 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
     protocolFilter.addEventListener('change', filterAndSort);
     dateFilter.addEventListener('change', filterAndSort);
 
-    filterAndSort(); // Initial call to display items based on the default values
+    filterAndSort(); // Изначальный вызов для отображения элементов на основе значений по умолчанию
 });

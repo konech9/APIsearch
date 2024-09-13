@@ -11,6 +11,25 @@
         <span class="v93_13">SIBIRSKIY COSMOS</span>
         <span class="v93_15">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
     </div>
+
+    <div class="auth-buttons">
+    {% if user.is_authenticated %}
+        <div class="user-profile">
+            <button class="profile-button">{{ user.username }}</button>
+            <div class="profile-dropdown">
+                <a href="{% url 'profile' %}">Профиль</a>
+                <a href="{% url 'logout' %}">Выйти</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="auth-links">
+            <a href="{% url 'login' %}" class="auth-button">Вход</a>
+            <a href="{% url 'register' %}" class="auth-button">Регистрация</a>
+        </div>
+    {% endif %}
+    </div>
+
+<!--    Список API-->
     <div class="container">
         <div class="filters">
             <div class="filter">
