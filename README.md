@@ -120,13 +120,40 @@ Team-lead Полякова Анастасия Сергеевна
     *  body комментарий
     *  created_at дата выгрузки API на сайт
 
-  3.  Money_types
-    * id 
-    * id_api 
-    * id_money_type 
-    * unit_of_payment 
-    * price
-    * body    
+1.  Money_types
+    * id счетчик
+    * types_of_use тип тарифа (подписка, покупка на период, оплата за использование...)
+    * description описание
+
+4. Money_types_for_each_api
+    * id счетчик
+    * id_api ключ API
+    * id_money_type ключ типа тарифа
+    * unit_of_payment единица измерения (использование, день, месяц...)
+    * price цена за единицу
+    * body  комментарий
+
+5. Sales_receipt
+    * id счетчик
+    * seller_id ссылка на продавца
+    * customer_id ссылка на покупателя
+    * money_types_for_each_api_id ссылка на тариф
+    * period_begin начало периода (пустое, если подписка не на период)
+    * period_end конец периода (пустое, если подписка не на период)
+    * count_of_request количество использований (пустое, если тариф не на использование)
+    * total_price итоговая цена (расчетная цена за период или количество использований)
+    * body комментарий 
+    * created_at дата покупки
+
+6. Logs
+    * id счетчик
+    * type тип события
+    * user_id пользователь, породивший событие
+    * sales_id привязынная покупка (если есть)
+    * activation_event факт активации подписки (если есть)
+    * count_of_current_request количество выполненных запросов (если есть)
+    * created_at дата события
+
 
 
 
