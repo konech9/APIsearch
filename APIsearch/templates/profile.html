@@ -7,77 +7,65 @@
     <title>Профиль</title>
 </head>
 <body>
-
-<div class="v102_94">
-    <div class="v102_95">
-        <span class="v102_96">SIBIRSKIY COSMOS</span>
-        <span class="v102_97">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
-    </div>
-
-    <div class="v103_119">
-        <span class="v103_120">ПРОФИЛЬ</span>
-    </div>
-
-    <div class="v102_107">
-        <div class="v102_108"></div>
-        <div class="v102_109"></div>
-        <div class="v102_110"></div>
-    </div>
-
-    <div class="v103_116">
-        <span class="v103_161">Выберите фото</span>
-    </div>
-
-    <!-- Фамилия -->
-    <span class="v103_151">Фамилия</span>
-    <div class="v103_141">
-        <span class="v103_userinfo">{{ user.last_name }}</span>
-    </div>
-
-    <!-- Имя -->
-    <span class="v103_153">Имя</span>
-    <div class="v103_143">
-        <span class="v103_userinfo">{{ user.first_name }}</span>
-    </div>
-
-    <!-- Отчество -->
-    <span class="v103_155">Отчество</span>
-    <div class="v103_145">
-        <span class="v103_userinfo">{{ user.profile.patronymic }}</span>
-    </div>
-
-    <!-- E-mail -->
-    <span class="v103_157">E-mail</span>
-    <div class="v103_147">
-        <span class="v103_userinfo">{{ user.email }}</span>
-    </div>
-
-    <!-- Номер телефона -->
-    <span class="v103_159">Номер телефона</span>
-    <div class="v103_147">
-        <span class="v103_userinfo">{{ user.profile.phone_number }}</span>
-    </div>
-
-    <span class="v112_9">ЛК</span>
-
-    <!-- Блок для авторизации/профиля в правом верхнем углу -->
-    <div class="auth-buttons">
-        {% if user.is_authenticated %}
-            <div class="user-profile">
-                <button class="profile-button">{{ user.username }}</button>
-                <div class="profile-dropdown">
-                    <a href="{% url 'profile' %}">Профиль</a>
-                    <a href="{% url 'logout' %}">Выйти</a>
+    <!-- Логотип и название в левом верхнем углу -->
+    <div class="branding">
+                <div class="v102_95">
+                    <span class="v102_96">SIBIRSKIY COSMOS</span>
+                    <span class="v102_97">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
                 </div>
-            </div>
-        {% else %}
-            <div class="auth-links">
-                <a href="{% url 'login' %}" class="auth-button">Вход</a>
-                <a href="{% url 'register' %}" class="auth-button">Регистрация</a>
-            </div>
-        {% endif %}
     </div>
-</div>
 
+    <!-- Профиль и кнопка на главную справа -->
+    <div class="header-right">
+        <div class="main-button">
+            <a href="{% url 'api_list' %}" class="main-button-link">На главную</a>
+        </div>
+        <!-- Новая кнопка перехода в личный кабинет -->
+        <div class="main-button">
+            <a href="{% url 'lk' %}" class="main-button-link">Личный кабинет</a>
+        </div>
+
+        <div class="auth-buttons">
+            {% if user.is_authenticated %}
+                <div class="user-profile">
+                    <button class="profile-button">{{ user.username }}</button>
+                    <div class="profile-dropdown">
+                        <a href="{% url 'profile' %}">Профиль</a>
+                        <a href="{% url 'logout' %}">Выйти</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="auth-links">
+                    <a href="{% url 'login' %}" class="auth-button">Вход</a>
+                    <a href="{% url 'register' %}" class="auth-button">Регистрация</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Информация о пользователе в центре страницы -->
+    <div class="profile-container">
+        <h2>Информация о профиле</h2>
+        <div class="profile-section">
+            <label>Имя:</label>
+            <span>{{ user.first_name }}</span>
+        </div>
+        <div class="profile-section">
+            <label>Фамилия:</label>
+            <span>{{ user.last_name }}</span>
+        </div>
+        <div class="profile-section">
+            <label>Отчество:</label>
+            <span>{{ user.patronymic }}</span>
+        </div>
+        <div class="profile-section">
+            <label>Возраст:</label>
+            <span>{{ user.age }}</span>
+        </div>
+        <div class="profile-section">
+            <label>Номер телефона:</label>
+            <span>{{ user.phone }}</span>
+        </div>
+    </div>
 </body>
 </html>

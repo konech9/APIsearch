@@ -89,3 +89,8 @@ def profile(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+@login_required  # Декоратор для защиты страницы, чтобы доступ был только у авторизованных пользователей
+def lk_view(request):
+    # Здесь можно добавить логику для передачи данных в шаблон
+    return render(request, 'lk.html', {'user': request.user})

@@ -1,0 +1,80 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Логотип и название слева в верхнем углу */
+.branding .v102_95 {
+    background-color: rgba(145, 180, 214, 1);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.v102_96 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.v102_97 {
+    color: white;
+    font-size: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(145,180,214,1);
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+.sidebar {
+    width: 200px;
+    float: left;
+}
+
+.sidebar-button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar-button:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    margin-left: 220px; /* Оставляем место для бокового меню */
+    padding: 20px;
+}
+
+#section-content {
+    margin-top: 20px;
+}

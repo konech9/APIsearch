@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="{% static 'login/css/profile.css' %}" rel="stylesheet" />
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span class="v102_96">SIBIRSKIY COSMOS</span>
+            <span class="v102_97">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
+        </div>
+        <div class="auth-buttons">
+            <a href="{% url 'main_page' %}" class="nav-button">Главное меню</a>
+            <a href="{% url 'profile' %}" class="nav-button">Личный кабинет</a>
+            {% if user.is_authenticated %}
+                <div class="user-profile">
+                    <button class="profile-button">{{ user.username }}</button>
+                    <div class="profile-dropdown">
+                        <a href="{% url 'profile' %}">Профиль</a>
+                        <a href="{% url 'logout' %}">Выйти</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="auth-links">
+                    <a href="{% url 'login' %}" class="auth-button">Вход</a>
+                    <a href="{% url 'register' %}" class="auth-button">Регистрация</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="sidebar">
+            <button class="sidebar-button" id="api-exhibit">API Витрина</button>
+            <button class="sidebar-button" id="my-apis">Мои API</button>
+            <button class="sidebar-button" id="api-connection">Подключение к API</button>
+            <button class="sidebar-button" id="analytics">Аналитика</button>
+        </div>
+        <div class="main-content">
+            <h1 id="active-section">API Витрина</h1>
+            <div id="section-content">
+                <!-- Здесь будет отображаться информация по нажатию на кнопки -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
