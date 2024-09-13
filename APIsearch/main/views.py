@@ -6,6 +6,9 @@ from .forms import UserRegisterForm, UserLoginForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+from django.views import View
+from .models import API
 
 def api_list(request):
     apis = API.objects.all()  # Fetch all APIs from the database
@@ -91,6 +94,19 @@ def logout_view(request):
     return redirect('login')
 
 @login_required  # Декоратор для защиты страницы, чтобы доступ был только у авторизованных пользователей
-def lk_view(request):
+def lk(request):
     # Здесь можно добавить логику для передачи данных в шаблон
     return render(request, 'lk.html', {'user': request.user})
+
+
+class AnalyticsDataView(View):
+    def get(self, request, *args, **kwargs):
+        user_id = request.user.id
+        apis = API.objects.filter(creator_id=user_id)  # Используем creator_id
+        labels = [api.name for api in apis]
+        counts = [api.count_of_uses for api in apis]
+        data = {
+            'labels': labels,
+            'counts': counts
+        }
+        return JsonResponse(data)

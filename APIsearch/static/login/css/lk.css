@@ -6,23 +6,23 @@ body {
 }
 
 /* Логотип и название слева в верхнем углу */
-.branding .v102_95 {
-    background-color: rgba(145, 180, 214, 1);
-    padding: 20px;
-    border-radius: 20px;
+.header .logo {
+    display: flex;
+    flex-direction: column;
 }
 
-.v102_96 {
+.header .v102_96 {
     color: white;
     font-size: 40px;
     font-weight: bold;
 }
 
-.v102_97 {
+.header .v102_97 {
     color: white;
     font-size: 24px;
 }
 
+/* Верхняя панель */
 .header {
     display: flex;
     justify-content: space-between;
@@ -32,13 +32,20 @@ body {
     border-bottom: 2px solid #ccc;
 }
 
+/* Панель с кнопками аутентификации и профилем */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между кнопками */
+}
+
 .nav-button {
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
-    margin: 0 5px;
+    margin: 0; /* Убираем отступы */
     text-decoration: none;
     font-size: 16px;
 }
@@ -47,6 +54,43 @@ body {
     background-color: #0056b3;
 }
 
+.user-profile {
+    position: relative;
+}
+
+.profile-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px; /* Сделаем размер шрифта одинаковым с .nav-button */
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.user-profile:hover .profile-dropdown {
+    display: block;
+}
+
+/* Левое боковое меню и контент */
 .sidebar {
     width: 200px;
     float: left;
@@ -77,4 +121,8 @@ body {
 
 #section-content {
     margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
