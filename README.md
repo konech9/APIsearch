@@ -12,6 +12,6 @@ Team-lead Полякова Анастасия Сергеевна
 
 
 
-![Структура БД](images\DataBasePic.png "Структура базы данных")
+![Структура БД](images/DataBasePic.png "Структура базы данных")
 
-![Покупка API](images\BuyAPI.svg "Покупка API")
+![Покупка API](images/BuyAPI.svg "Покупка API")
