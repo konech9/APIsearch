@@ -103,7 +103,7 @@ IBM API Connect может требовать длительного време�
 * Наличие ***сквозной аналитики***
 
 ### Общая модель решения 
-ФИЧААААА
+
 ![GeneralModel](images/GeneralModel.png "GeneralModel")
 
 ### Модели процессов
@@ -208,15 +208,16 @@ IBM API Connect может требовать длительного време�
 
 ## Реализованный сайт
 
-![mainpage](images/Django/registration.jpg "mainpage")
+![registr](images/Django/registration.jpg "registr")
 
 ![login](images/Django/login.jpg "login")
 
-![APIdescr](images/prototipFigma/APIdescr.jpg "APIdescr")
-![userProfile](images/prototipFigma/userProfile.jpg "userProfile")
+![userProfile](images/Django/userProfile.jpg "userProfile")
 
-![LK-vitrina](images/prototipFigma/LK-vitrina.jpg "LK-vitrina")
-![LK-analitics](images/prototipFigma/LK-analitics.jpg "LK-analitics")
+![APIdescr](images/Django/searchAPI.jpg "APIdescr")
+
+![Analitics](images/Django/analitics.jpg "Analitics")
+
 
 
 ## Стек технологии
