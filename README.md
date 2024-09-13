@@ -103,6 +103,7 @@ IBM API Connect может требовать длительного време�
 * Наличие ***сквозной аналитики***
 
 ### Общая модель решения 
+ФИЧААААА
 ![GeneralModel](images/GeneralModel.png "GeneralModel")
 
 ### Модели процессов
@@ -190,14 +191,46 @@ IBM API Connect может требовать длительного време�
 Скрипт на создание базы [здесь](./APIsearch/DataBase/create.sql)
 
 ## Прототип сайта
-Главная страница
+
 ![mainpage](images/prototipFigma/mainpage.jpg "mainpage")
 
 ![registration](images/prototipFigma/registration.jpg "")
+
 ![login](images/prototipFigma/login.jpg "login")
+
 ![mainpage_after_login](images/prototipFigma/mainpage_after_login.jpg "mainpage_after_login")
+![APIdescr](images/prototipFigma/APIdescr.jpg "APIdescr")
 ![userProfile](images/prototipFigma/userProfile.jpg "userProfile")
+
 ![LK-vitrina](images/prototipFigma/LK-vitrina.jpg "LK-vitrina")
 ![LK-analitics](images/prototipFigma/LK-analitics.jpg "LK-analitics")
-![APISearc](images/prototipFigma/APISearch.jpg "APISearc")
+
+
+## Реализованный сайт
+
+![mainpage](images/Django/mainpage.jpg "mainpage")
+
+![registration](images/prototipFigma/registration.jpg "")
+
+![login](images/prototipFigma/login.jpg "login")
+
+![mainpage_after_login](images/prototipFigma/mainpage_after_login.jpg "mainpage_after_login")
 ![APIdescr](images/prototipFigma/APIdescr.jpg "APIdescr")
+![userProfile](images/prototipFigma/userProfile.jpg "userProfile")
+
+![LK-vitrina](images/prototipFigma/LK-vitrina.jpg "LK-vitrina")
+![LK-analitics](images/prototipFigma/LK-analitics.jpg "LK-analitics")
+
+
+## Стек технологии
+* *Frontend:* HTML, CSS, JavaScript создания удобного и функционального интерфейса.
+
+* *Backend:* Python с использованием фреймворка Django для обработки запросов и управления бизнес-логикой.
+
+* *База данных:* Реляционная СУБД PostgreSQL для хранения данных.
+
+* *API:* RESTful API для взаимодействия между frontend и backend частями приложения.
+
+* *Среда разработки:* Pycharm и VScode
+
+
