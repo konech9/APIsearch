@@ -5,30 +5,40 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserLoginForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
+from django.shortcuts import render, get_object_or_404
 
 def api_list(request):
-    # Фильтры
-    #category = request.GET.get('category')
-    apis = API.objects.all()
+    apis = API.objects.all()  # Fetch all APIs from the database
+    return render(request, 'api_list.html', {'apis': apis})
 
-    # if category:
-    #     apis = apis.filter(category=category)
 
-    context = {
-        'apis': apis,
-    }
-    return render(request, 'api_list.html', context)
+def api_detail(request, api_id):
+    api = get_object_or_404(API, id=api_id)  # Fetch specific API based on its ID
+    return render(request, 'api_detail.html', {'api': api})
 
 
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
+            # Сохраняем пользователя
             user = form.save()
+
+            # Логиним пользователя после успешной регистрации
             login(request, user)
+
+            # Перенаправляем на страницу профиля или другую страницу
             return redirect('profile')
+
+        else:
+            # Если форма не валидна, можно вывести ошибки для отладки
+            print(form.errors)
+
     else:
+        # Если запрос GET, создаем пустую форму
         form = UserRegisterForm()
+
+    # Рендерим шаблон с формой
     return render(request, 'register.html', {'form': form})
 
 
