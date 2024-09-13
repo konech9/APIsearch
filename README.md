@@ -208,13 +208,10 @@ IBM API Connect может требовать длительного време�
 
 ## Реализованный сайт
 
-![mainpage](images/Django/mainpage.jpg "mainpage")
+![mainpage](images/Django/registration.jpg "mainpage")
 
-![registration](images/prototipFigma/registration.jpg "")
+![login](images/Django/login.jpg "login")
 
-![login](images/prototipFigma/login.jpg "login")
-
-![mainpage_after_login](images/prototipFigma/mainpage_after_login.jpg "mainpage_after_login")
 ![APIdescr](images/prototipFigma/APIdescr.jpg "APIdescr")
 ![userProfile](images/prototipFigma/userProfile.jpg "userProfile")
 
