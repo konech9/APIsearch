@@ -48,18 +48,11 @@ body {
   text-align: left;
 }
 .v105_254 {
-  width: 419px;
-  height: 50px;
-  background: rgba(219,232,243,1);
-  opacity: 1;
-  position: absolute;
-  top: 654px;
-  left: 809px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  overflow: hidden;
+  color: rgba(79, 79, 79, 1);
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  line-height: 50px; /* Center text vertically */
 }
 .v105_255 {
   width: 317px;
@@ -327,7 +320,7 @@ body {
 
 .v105_189, .v105_191, .v105_193, .v105_197, .v105_201, .v105_207, .v105_209, .v105_213, .v105_250 {
   width: 700px;
-  height: 50px;
+  height: 70px;
   background: rgba(219, 232, 243, 1);
   position: absolute;
   border-radius: 10px;
@@ -343,7 +336,7 @@ body {
 .v105_207 { top: 311px; left: 1109px; }
 .v105_209 { top: 397px; left: 1109px; }
 .v105_213 { top: 477px; left: 1109px; }
-.v105_250 { width: 419px; top: 721px; left: 809px; }
+.v105_250 { width: 600px; top: 721px; left: 809px; }
 
 .v105_252 {
   color: rgba(79, 79, 79, 1);
@@ -382,7 +375,7 @@ body {
 .form-group input {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -390,7 +383,7 @@ body {
 .registration-form button {
   width: 100%;
   padding: 10px;
-  font-size: 20px;
+  font-size: 40px;
   color: white;
   background: rgba(145, 180, 214, 1);
   border: none;
@@ -594,6 +587,11 @@ body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
+  color: rgba(79, 79, 79, 1);
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  line-height: 50px; /* Center text vertically */
 }
 .v105_255 {
   width: 317px;
@@ -610,3 +608,40 @@ body {
 
 /*Конец профиля*/
 
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+  width: 390%; /* Увеличение ширины до 100% контейнера */
+  max-width: 100000px; /* Установите максимальную ширину при необходимости */
+  padding: 15px; /* Увеличьте внутренние отступы */
+  font-size: 20px; /* Увеличьте размер шрифта */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.top-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Расстояние между кнопками */
+}
+
+.top-button {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(79, 79, 79, 1);
+  background: rgba(219, 232, 243, 1);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.top-button:hover {
+  background: rgba(145, 180, 214, 1);
+  color: #fff;
+}

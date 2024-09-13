@@ -1,29 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>My Site</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <nav>-->
-<!--        <a href="{% url 'login' %}">Войти</a> |-->
-<!--        <a href="{% url 'register' %}">Зарегистрироваться</a>-->
-<!--    </nav>-->
-<!--    <hr>-->
-<!--    <div>-->
-<!--          <h2>Регистрация</h2>-->
-<!--          <form method="POST">-->
-<!--            {% csrf_token %}-->
-<!--            {{ form.as_p }}-->
-<!--            <button type="submit">Зарегистрироваться</button>-->
-<!--          </form>-->
-<!--    </div>-->
-<!--</body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,15 +20,11 @@
             <div class="v103_171"></div>
             <div class="v103_172"></div>
         </div>
-<!--        <div class="v103_175"></div>-->
-<!--        <div class="v105_189"></div>-->
-<!--        <div class="v105_191"></div>-->
-<!--        <div class="v105_193"></div>-->
-<!--        <div class="v105_197"></div>-->
-<!--        <div class="v105_201"></div>-->
-<!--        <div class="v105_207"></div>-->
-<!--        <div class="v105_209"></div>-->
-<!--        <div class="v105_213"></div>-->
+
+        <div class="top-buttons">
+            <a href="{% url 'login' %}" class="top-button">Вход</a>
+            <a href="{% url 'api_list' %}" class="top-button">Главное меню</a>
+        </div>
 
         <!-- Форма регистрации -->
         <form action="{% url 'register' %}" method="post" class="registration-form">

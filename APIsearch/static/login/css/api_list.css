@@ -18,29 +18,40 @@ body {
 }
 
 .filters {
-    width: 300px;
-    padding: 20px;
+    width: 400px; /* Увеличил ширину фильтров */
+    padding: 30px; /* Увеличил внутренние отступы */
     background: rgba(255, 255, 255, 1);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Увеличил расстояние между фильтрами */
 }
 
 .filter-title {
     display: block;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Увеличил расстояние между заголовком и полем ввода */
+    font-size: 20px; /* Увеличил размер шрифта */
 }
 
 .search-box {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px; /* Увеличил внутренние отступы */
+    margin: 15px 0; /* Увеличил отступы сверху и снизу */
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 18px; /* Увеличил размер шрифта */
+}
+
+.select-filter {
+    width: 100%;
+    padding: 15px; /* Увеличил внутренние отступы */
+    margin: 10px 0; /* Увеличил отступы сверху и снизу */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* Увеличил размер шрифта */
 }
 
 .api-list {
@@ -72,45 +83,49 @@ body {
 .buy-button:hover {
     background-color: #218838;
 }
+
 .v98_18 {
-  width: 700px;
-  height: 140px;
-  background: rgba(145,180,214,1);
-  opacity: 1;
-  position: absolute;
-  top: 29px;
-  left: 35px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
-}
-.v93_13 {
-  width: 387px;
-  color: rgba(255,251,251,1);
-  position: absolute;
-  top: 22px;
-  left: 156px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 40px;
-  opacity: 1;
-  text-align: left;
-}
-.v93_15 {
-  width: 613px;
-  color: rgba(255,251,251,1);
-  position: absolute;
-  top: 70px;
-  left: 43px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 32px;
-  opacity: 1;
-  text-align: left;
+    width: 700px;
+    height: 140px;
+    background: rgba(145,180,214,1);
+    opacity: 1;
+    position: absolute;
+    top: 29px;
+    left: 35px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
 }
 
+.v93_13 {
+    width: 387px;
+    color: rgba(255,251,251,1);
+    position: absolute;
+    top: 22px;
+    left: 156px;
+    font-family: Inter;
+    font-weight: Bold;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+}
+
+.v93_15 {
+    width: 613px;
+    color: rgba(255,251,251,1);
+    position: absolute;
+    top: 70px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: left;
+}
+
+/* Изменения для увеличения блока с кнопками */
 .auth-buttons {
     position: absolute;
     top: 10px;
@@ -119,17 +134,17 @@ body {
 
 .auth-links {
     display: flex;
-    gap: 10px;
+    gap: 30px; /* Увеличил расстояние между кнопками */
 }
 
 .auth-button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 10px; /* Увеличил радиус скругления */
+    padding: 20px 40px; /* Увеличил внутренние отступы */
     text-decoration: none;
-    font-size: 16px;
+    font-size: 24px; /* Увеличил размер шрифта */
 }
 
 .auth-button:hover {
@@ -145,9 +160,9 @@ body {
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 10px; /* Увеличил радиус скругления */
+    padding: 20px 40px; /* Увеличил внутренние отступы */
+    font-size: 24px; /* Увеличил размер шрифта */
     cursor: pointer;
 }
 
@@ -162,15 +177,16 @@ body {
     right: 0;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Увеличил радиус скругления */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличил тень */
 }
 
 .profile-dropdown a {
     display: block;
-    padding: 10px 20px;
+    padding: 20px 40px; /* Увеличил внутренние отступы */
     text-decoration: none;
     color: #333;
+    font-size: 20px; /* Увеличил размер шрифта */
 }
 
 .profile-dropdown a:hover {

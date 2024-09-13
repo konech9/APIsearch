@@ -1,74 +1,83 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>My Site</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <nav>-->
-<!--        <a href="{% url 'login' %}">Войти</a> |-->
-<!--        <a href="{% url 'register' %}">Зарегистрироваться</a>-->
-<!--    </nav>-->
-<!--    <hr>-->
-<!--    <form method="post" action="{% url 'profile' %}">-->
-<!--    {% csrf_token %}-->
-<!--    &lt;!&ndash; Поля формы &ndash;&gt;-->
-<!--    <label for="first_name">First Name:</label>-->
-<!--    <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" />-->
-
-<!--    <label for="last_name">Last Name:</label>-->
-<!--    <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" />-->
-
-<!--    <label for="phone">Phone:</label>-->
-<!--    <input type="text" id="phone" name="phone" value="{{ user.phone }}" />-->
-
-<!--    &lt;!&ndash; Другие поля формы &ndash;&gt;-->
-<!--    <button type="submit">Save</button>-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
     {% load static %}
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-    <link href="{% static 'login/css/main.css' %}" rel="stylesheet" />
+    <link href="{% static 'login/css/profile.css' %}" rel="stylesheet" />
     <title>Профиль</title>
 </head>
 <body>
+
 <div class="v102_94">
     <div class="v102_95">
         <span class="v102_96">SIBIRSKIY COSMOS</span>
         <span class="v102_97">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
     </div>
+
     <div class="v103_119">
         <span class="v103_120">ПРОФИЛЬ</span>
     </div>
+
     <div class="v102_107">
         <div class="v102_108"></div>
         <div class="v102_109"></div>
         <div class="v102_110"></div>
     </div>
+
     <div class="v103_116">
         <span class="v103_161">Выберите фото</span>
     </div>
-    <div class="v103_117"></div>
+
+    <!-- Фамилия -->
     <span class="v103_151">Фамилия</span>
-    <div class="v103_145"></div>
-    <div class="v103_147"></div>
-    <div class="v103_143"></div>
-    <span class="v103_155">Отчество</span>
-    <span class="v103_157">E-mail</span>
-    <span class="v103_159">Номер телефона</span>
-    <div class="v103_141"></div>
+    <div class="v103_141">
+        <span class="v103_userinfo">{{ user.last_name }}</span>
+    </div>
+
+    <!-- Имя -->
     <span class="v103_153">Имя</span>
+    <div class="v103_143">
+        <span class="v103_userinfo">{{ user.first_name }}</span>
+    </div>
+
+    <!-- Отчество -->
+    <span class="v103_155">Отчество</span>
+    <div class="v103_145">
+        <span class="v103_userinfo">{{ user.profile.patronymic }}</span>
+    </div>
+
+    <!-- E-mail -->
+    <span class="v103_157">E-mail</span>
+    <div class="v103_147">
+        <span class="v103_userinfo">{{ user.email }}</span>
+    </div>
+
+    <!-- Номер телефона -->
+    <span class="v103_159">Номер телефона</span>
+    <div class="v103_147">
+        <span class="v103_userinfo">{{ user.profile.phone_number }}</span>
+    </div>
+
     <span class="v112_9">ЛК</span>
+
+    <!-- Блок для авторизации/профиля в правом верхнем углу -->
+    <div class="auth-buttons">
+        {% if user.is_authenticated %}
+            <div class="user-profile">
+                <button class="profile-button">{{ user.username }}</button>
+                <div class="profile-dropdown">
+                    <a href="{% url 'profile' %}">Профиль</a>
+                    <a href="{% url 'logout' %}">Выйти</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="auth-links">
+                <a href="{% url 'login' %}" class="auth-button">Вход</a>
+                <a href="{% url 'register' %}" class="auth-button">Регистрация</a>
+            </div>
+        {% endif %}
+    </div>
 </div>
+
 </body>
 </html>

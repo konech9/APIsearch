@@ -30,7 +30,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     age = models.IntegerField()
     birth_date = models.DateField()
     phone = models.CharField(max_length=11)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateField(auto_now_add=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True)
@@ -53,7 +53,7 @@ class API(models.Model):
     type = models.CharField(max_length=30, blank=True, null=True)
     protocol = models.CharField(max_length=10, blank=True, null=True)
     body = models.TextField(blank=True, null=True)
-    created_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateField(blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     count_of_uses = models.IntegerField(blank=True, null=True)
 
