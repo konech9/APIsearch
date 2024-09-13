@@ -102,6 +102,9 @@ IBM API Connect может требовать длительного време�
 * *Уведомления* о выходе новой версии API продукта с подробным описанием изменений в схеме данных
 * Наличие ***сквозной аналитики***
 
+### Общая модель решения 
+![GeneralModel](images/GeneralModel.png "GeneralModel")
+
 ### Модели процессов
 Для реализации требований необходимо представить модели процессов регистрации и покупки API 
 #### Прототип модели "Регистрация пользователя" 
@@ -187,12 +190,14 @@ IBM API Connect может требовать длительного време�
 Скрипт на создание базы [здесь](./APIsearch/DataBase/create.sql)
 
 ## Прототип сайта
-![Структура БД](images/prototipFigma/photo_1_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_2_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_3_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_4_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_5_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_6_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_7_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_8_2024-09-13_14-42-34.jpg "")
-![Структура БД](images/prototipFigma/photo_9_2024-09-13_14-42-34.jpg "")
+Главная страница
+![mainpage](images/prototipFigma/mainpage.jpg "mainpage")
+
+![registration](images/prototipFigma/registration.jpg "")
+![login](images/prototipFigma/login.jpg "login")
+![mainpage_after_login](images/prototipFigma/mainpage_after_login.jpg "mainpage_after_login")
+![userProfile](images/prototipFigma/userProfile.jpg "userProfile")
+![LK-vitrina](images/prototipFigma/LK-vitrina.jpg "LK-vitrina")
+![LK-analitics](images/prototipFigma/LK-analitics.jpg "LK-analitics")
+![APISearc](images/prototipFigma/APISearch.jpg "APISearc")
+![APIdescr](images/prototipFigma/APIdescr.jpg "APIdescr")
