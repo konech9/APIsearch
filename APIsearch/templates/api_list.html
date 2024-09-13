@@ -1,55 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    {% load static %}-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />-->
-<!--    <link href="{% static 'login/css/api_list.css' %}" rel="stylesheet" />-->
-<!--    <title>API list</title>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--<div class="v98_17">-->
-<!--    <div class="v98_18">-->
-<!--        <span class="v93_13">SIBIRSKIY COSMOS</span>-->
-<!--        <span class="v93_15">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>-->
-<!--    </div>-->
-<!--    <div class="v98_19">-->
-<!--        <span class="v93_39">Поиск API</span>-->
-<!--        <div class="v100_54"></div>-->
-<!--    </div>-->
-<!--    <div class="v98_20">-->
-<!--        <span class="v93_81">Фильтр по стоимости</span>-->
-<!--    </div>-->
-<!--    <div class="v98_21">-->
-<!--        <span class="v93_82">Фильтр по типу API</span>-->
-<!--    </div>-->
-<!--    <div class="v98_23">-->
-<!--        <span class="v93_84">Фильтр по популярности</span>-->
-<!--    </div>-->
-<!--    <div class="v98_25">-->
-<!--        <span class="v93_86">Фильтр по типу протокола</span>-->
-<!--    </div>-->
-<!--    <div class="v98_27">-->
-<!--        <span class="v93_88">Фильтр по дате</span>-->
-<!--    </div>-->
-<!--    <h1>API List</h1>-->
-
-<!--    &lt;!&ndash; Loop through the APIs and display each one in a block &ndash;&gt;-->
-<!--    <div class="api-list">-->
-<!--        {% for api in apis %}-->
-<!--        <div class="api-item">-->
-<!--            <h2>{{ api.name }}</h2>-->
-<!--            <p>{{ api.body|truncatewords:30 }}</p>-->
-<!--            <span>{{ api.price }} USD</span>-->
-<!--            <a href="{% url 'api_detail' api.id %}" class="buy-button">Купить</a>-->
-<!--        </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,40 +11,68 @@
         <span class="v93_13">SIBIRSKIY COSMOS</span>
         <span class="v93_15">МАРКЕТПЛЕЙС ДЛЯ API-ПРОДУКТОВ</span>
     </div>
-<div class="container">
-    <div class="filters">
-        <div class="filter">
-            <span class="filter-title">Поиск API</span>
-            <div class="search-box"></div>
+    <div class="container">
+        <div class="filters">
+            <div class="filter">
+                <span class="filter-title">Поиск API</span>
+                <input type="text" id="search-box" class="search-box" placeholder="Поиск по названию..."/>
+            </div>
+            <div class="filter">
+                <span class="filter-title">Фильтр по стоимости</span>
+                <select id="price-filter" class="filter-select">
+                    <option value="">Выберите</option>
+                    <option value="low-high">От низкой к высокой</option>
+                    <option value="high-low">От высокой к низкой</option>
+                </select>
+            </div>
+            <div class="filter">
+                <span class="filter-title">Фильтр по типу API</span>
+                <select id="type-filter" class="filter-select">
+                    <option value="">Выберите</option>
+                    <option value="type1">Тип 1</option>
+                    <option value="type2">Тип 2</option>
+                    <!-- Добавьте другие типы по необходимости -->
+                </select>
+            </div>
+            <div class="filter">
+                <span class="filter-title">Фильтр по популярности</span>
+                <select id="popularity-filter" class="filter-select">
+                    <option value="">Выберите</option>
+                    <option value="high">Высокая</option>
+                    <option value="low">Низкая</option>
+                </select>
+            </div>
+            <div class="filter">
+                <span class="filter-title">Фильтр по типу протокола</span>
+                <select id="protocol-filter" class="filter-select">
+                    <option value="">Выберите</option>
+                    <option value="protocol1">Протокол 1</option>
+                    <option value="protocol2">Протокол 2</option>
+                    <!-- Добавьте другие протоколы по необходимости -->
+                </select>
+            </div>
+            <div class="filter">
+                <span class="filter-title">Фильтр по дате</span>
+                <select id="date-filter" class="filter-select">
+                    <option value="">Выберите</option>
+                    <option value="newest">По дате (новые сначала)</option>
+                    <option value="oldest">По дате (старые сначала)</option>
+                </select>
+            </div>
         </div>
-        <div class="filter">
-            <span class="filter-title">Фильтр по стоимости</span>
-        </div>
-        <div class="filter">
-            <span class="filter-title">Фильтр по типу API</span>
-        </div>
-        <div class="filter">
-            <span class="filter-title">Фильтр по популярности</span>
-        </div>
-        <div class="filter">
-            <span class="filter-title">Фильтр по типу протокола</span>
-        </div>
-        <div class="filter">
-            <span class="filter-title">Фильтр по дате</span>
+
+        <div class="api-list" id="api-list">
+            {% for api in apis %}
+            <div class="api-item" data-name="{{ api.name }}" data-price="{{ api.price }}" data-type="{{ api.type }}" data-popularity="{{ api.popularity }}" data-protocol="{{ api.protocol }}" data-date="{{ api.created_at }}">
+                <h2>{{ api.name }}</h2>
+                <p>{{ api.body|truncatewords:30 }}</p>
+                <span>{{ api.price }} USD</span>
+                <a href="{% url 'api_detail' api.id %}" class="buy-button">Купить</a>
+            </div>
+            {% endfor %}
         </div>
     </div>
 
-    <div class="api-list">
-        {% for api in apis %}
-        <div class="api-item">
-            <h2>{{ api.name }}</h2>
-            <p>{{ api.body|truncatewords:30 }}</p>
-            <span>{{ api.price }} USD</span>
-            <a href="{% url 'api_detail' api.id %}" class="buy-button">Купить</a>
-        </div>
-        {% endfor %}
-    </div>
-</div>
+    <script src="{% static 'login/js/api_list.js' %}"></script>
 </body>
 </html>
-
