@@ -10,4 +10,4 @@ Team-lead Полякова Анастасия Сергеевна
 
 Коновалов Дмитрий Романович
 
-![alt text]("APIsearch\DataBase\Структура\basePic.png" "Title")
+![Структура БД](APIsearch\DataBase\Структура\basePic.png "Структура базы данных")
